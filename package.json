@@ -1,0 +1,29 @@
+{
+	"name": "ririxi-cdn",
+	"version": "1.1.0",
+	"main": "dist/index.js",
+	"author": "ririxi <mail@ririxi.dev>",
+	"license": "GPL-3.0",
+	"packageManager": "yarn@3.1.1",
+	"private": true,
+	"devDependencies": {
+		"@commitlint/cli": "^16.1.0",
+		"@commitlint/config-conventional": "^16.0.0",
+		"@types/node": "^17.0.16",
+		"dotenv": "^16.0.0",
+		"husky": "^7.0.4",
+		"typescript": "^4.5.5"
+	},
+	"dependencies": {
+		"fastify": "^3.27.1",
+		"fastify-multipart": "^5.3.0",
+		"fastify-plugin": "^3.0.1",
+		"mongoose": "^6.2.1",
+		"pino": "^7.6.5"
+	},
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"postinstall": "husky install"
+	}
+}
