@@ -27,7 +27,9 @@ const ConnectDB: FastifyPluginAsync<options> = async (
 			fastify.log.error({ actor: "mongoDB" }, "lost connection with database");
 		});
 
-		const db = await mongoose.connect(options.uri),
+		const db = await mongoose.connect(options.uri, {
+				connectTimeoutMS: 10000
+			}),
 			models: Models = { Slugs, Keys };
 
 		fastify.decorate("db", { models });
